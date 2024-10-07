@@ -17,27 +17,39 @@
       padding: 5vh 10vw;
       color: #121314;
     }
-
+  
     h1 {
       font-size: 4.5em;
       font-weight: 500;
       margin-bottom: 0;
     }
-
+  
     p {
       font-size: 1.6em;
       font-weight: 300;
       line-height: 1.4;
       max-width: 28em;
     }
-
-    a {
+  
+    a,
+    button {
       text-decoration: none;
       white-space: nowrap;
       color: #121314;
       position: relative;
     }
-
+  
+    button {
+      font-size: 1em;
+      font-weight: 500;
+      margin-bottom: 0;
+      cursor: pointer;
+      border: 0;
+      background: none;
+      padding: 0;
+    }
+  
+    button:after,
     a:after {
       content: '';
       position: absolute;
@@ -49,33 +61,93 @@
       transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
       background-color: rgba(79, 192, 141, 0.5);
     }
-
+  
+    button:hover:after,
     a:hover:after {
       top: 0%;
+    }
+  
+    .hidden {
+      display: none;
     }
   </style>
 </head>
 
 <body>
-  <h1>안녕하세요.</h1>
-  <p style="font-weight: 500; font-size: 2.2em">저는 CHE5YA입니다.</p>
-  <p> 저는 프론트엔드 개발자로 활동하고 있으며, React와 Vue.js를 주로 사용합니다. 웹 프론트엔드가 아닌 여러 분야의 업무를 병행하고 있습니다만, 웹 프론트엔드 개발에 대한 관심과 열정은 변함없습니다.
+  <h1 class="che5ya-title-ko">안녕하세요.</h1>
+  <h1 class="che5ya-title-ca hidden">Hola</h1>
+  <p class="che5ya-paragraph-ko" style="font-weight: 500; font-size: 2.2em">저는 CHE5YA입니다.</p>
+  <p class="che5ya-paragraph-ca hidden" style="font-weight: 500; font-size: 2.2em">Sóc CHE5YA.</p>
+  <p class="che5ya-paragraph-ko">
+    <button type="button" onclick="handleChangeLang('ca_ES')">Si voleu veure aquest perfil en català, feu clic aquí.</button>
   </p>
-  <p> SI 회사의 기획자로서의 경험을 바탕으로 프로젝트의 초기 기획, 설계 능력이 있으며 UI/UX에 대한 지속적인 관심과 작업 보조 등으로 인해 디자인 시안이 없더라도 일정 수준 이상의 와이어프레임과
+  <p class="che5ya-paragraph-ca hidden">
+    <button type="button" onclick="handleChangeLang('ko_KR')">한국어로 이 프로필을 보기 원하시면 여기를 눌러주세요.</button>
+  </p>
+  <p class="che5ya-paragraph-ko"> 저는 프론트엔드 개발자로 활동하고 있으며, React와 Vue.js를 주로 사용합니다. 웹 프론트엔드가 아닌 여러 분야의 업무를 병행하고 있습니다만, 웹 프론트엔드 개발에 대한 관심과 열정은 변함없습니다.</p>
+  <p class="che5ya-paragraph-ca hidden"> Treballo com a desenvolupador frontend, utilitzant principalment React i Vue.js. Tot i que compagino aquesta tasca amb
+  altres camps professionals, el meu interès i passió pel desenvolupament frontend web romanen intactes.</p>
+  <p class="che5ya-paragraph-ko"> SI 회사의 기획자로서의 경험을 바탕으로 프로젝트의 초기 기획, 설계 능력이 있으며 UI/UX에 대한 지속적인 관심과 작업 보조 등으로 인해 디자인 시안이 없더라도 일정 수준 이상의 와이어프레임과
     프로토타이핑을 제작할 수 있으며, UI 개발을 통해 그 초안을 시각화하는 데 능합니다. </p>
-  <p> 저는 B2B 서비스, 그 중에서도 관리 템플릿과 대시보드 UI 개발에 관심이 많으며 2015년부터 현재까지 비대면 임상시험 플랫폼, 일차 병원 원무 자동화 프로그램, 안드로이드 안티 바이러스 SDK 계약
+  <p class="che5ya-paragraph-ca hidden"> Basat en la meva experiència com a planificador en una empresa de SI, tinc habilitats per a la planificació i el disseny
+  de projectes des de les seves fases inicials. A més, gràcies al meu interès continuat per la UI/UX i el meu suport en
+  aquest àmbit, sóc capaç de crear wireframes i prototips de nivell superior fins i tot en absència de dissenys concrets.
+  També sóc hàbil per visualitzar aquests esborranys mitjançant el desenvolupament d'interfícies d'usuari.</p>
+  <p class="che5ya-paragraph-ko"> 저는 B2B 서비스, 그 중에서도 관리 템플릿과 대시보드 UI 개발에 관심이 많으며 2015년부터 현재까지 비대면 임상시험 플랫폼, 일차 병원 원무 자동화 프로그램, 안드로이드 안티 바이러스 SDK 계약
     관리 플랫폼과 같은 복잡성이 높으며 전문 인력이 사용하는 서비스를 개발해왔습니다. 최근에는 공장 자동화와 디지털 트윈과 관련된 여러 프로젝트에 참여하고 있습니다. </p>
-  <p> 기획, UI/UX, 프론트엔드 웹, 모바일, 백엔드, QA 등 다양한 업무 영역의 높은 관심과 경험을 통해 프로젝트의 전반적인 흐름을 이해하고 있으며 다른 분야의 동료들과 원활한 커뮤니케이션이 가능합니다.
+  <p class="che5ya-paragraph-ca hidden"> Tinc un interès especial en el desenvolupament de serveis B2B, en particular en la creació de plantilles de gestió i
+  interfícies de tauler de control. Des del 2015 fins ara, he participat en el desenvolupament de serveis d'alta
+  complexitat utilitzats per professionals, com ara plataformes d'assaigs clínics en remot, programes d'automatització per
+  a hospitals de primer nivell, i plataformes de gestió de contractes per a SDK d'antivirus per a Android. Recentment, he
+  col·laborat en diversos projectes relacionats amb l'automatització de fàbriques i els bessons digitals.</p>
+  <p class="che5ya-paragraph-ko"> 기획, UI/UX, 프론트엔드 웹, 모바일, 백엔드, QA 등 다양한 업무 영역의 높은 관심과 경험을 통해 프로젝트의 전반적인 흐름을 이해하고 있으며 다른 분야의 동료들과 원활한 커뮤니케이션이 가능합니다.
     또한 원리, 원칙을 중요하게 여기며 나의 행동이 악의 편에 서지 않고자 노력합니다. 저는 가진 경험과 직관, 능력을 모두 동원해 다른 이를 돕거나 문제를 목표 기한 내에 빠르게 처리하는 것을 좋아하는
     편입니다. </p>
-  <p> 또한 저는 개발 이외에도 다양한 취미와 관심사를 가지고 있으며, 예술, 인문학, 철학, 역사, 과학, 기술 등 다양한 분야에 얕고 넓은 지식을 갖고 있습니다. 최근에는 구형 IBM PowerPC G5
+  <p class="che5ya-paragraph-ca hidden"> A través del meu ampli interès i experiència en diverses àrees de treball, com ara planificació, UI/UX, desenvolupament
+  web frontend, mòbil, backend i QA, entenc el flux general dels projectes i puc comunicar-me eficaçment amb els meus
+  companys d'altres disciplines. A més, dono molta importància als principis i intento assegurar-me que les meves accions
+  no es decantin cap al mal. M'agrada utilitzar la meva experiència, intuïció i habilitats per ajudar els altres i
+  resoldre problemes de manera ràpida dins del termini establert. </p>
+  <p class="che5ya-paragraph-ko"> 또한 저는 개발 이외에도 다양한 취미와 관심사를 가지고 있으며, 예술, 인문학, 철학, 역사, 과학, 기술 등 다양한 분야에 얕고 넓은 지식을 갖고 있습니다. 최근에는 구형 IBM PowerPC G5
     워크스테이션을 활용한 서버 구축 및 안정화에 관심이 있으며, 어떻게 하면 더욱 재밌게 글을 쓰게 하는 도구를 만들까에 대한 고민을 하고 있습니다. </p>
-  <p> 연락처는 아래와 같습니다. <br /> * github: <a href="https://github.com/che5ya" target="_blank" rel="noopener">che5ya</a>
+  <p class="che5ya-paragraph-ca hidden"> A banda del desenvolupament, tinc diversos interessos i aficions. Tinc coneixements amplis i variats en àrees com l'art,
+  les humanitats, la filosofia, la història, la ciència i la tecnologia. Recentment, m'interesso per la configuració i
+  estabilització de servidors utilitzant una estació de treball IBM PowerPC G5 antiga, i també reflexiono sobre com crear
+  eines que facin l'escriptura més divertida.</p>
+  <p class="che5ya-paragraph-ca hidden">No puc comunicar-me en català, però he escrit la presentació en català perquè el domini d'aquesta pàgina web simbolitza
+  Catalunya. Aquesta introducció ha estat traduïda amb l'ajuda de ChatGPT. ;)</p>
+  <p class="che5ya-contact-ko"> 연락처는 아래와 같습니다. <br /> * github: <a href="https://github.com/che5ya" target="_blank" rel="noopener">che5ya</a>
     <br /> * discord id: <a href="https://discordapp.com/users/101125021228871680" target="_blank"
       rel="noopener">101125021228871680</a>
     <br /> * email: <a href="mailto:che5ya@naver.com">che5ya@naver.com</a>
     <br />
   </p>
+  <p class="che5ya-contact-ca hidden"> La meva informació de contacte és la següent. <br /> * github: <a href="https://github.com/che5ya" target="_blank"
+      rel="noopener">che5ya</a>
+    <br /> * discord id: <a href="https://discordapp.com/users/101125021228871680" target="_blank"
+      rel="noopener">101125021228871680</a>
+    <br /> * email: <a href="mailto:che5ya@naver.com">pos4414@gmail.com</a>
+    <br />
+  </p>
+  <script>
+    const KO_LANG = "ko_KR";
+    const CA_LANG = "ca_ES";
+    let lang = KO_LANG;
+
+    function handleChangeLang(selectedLang) {
+      document.querySelectorAll('.che5ya-title-ko, .che5ya-paragraph-ko, .che5ya-title-ca, .che5ya-paragraph-ca, .che5ya-contact-ko, .che5ya-contact-ca').forEach(el => el.classList.remove('hidden'));
+      if (selectedLang === CA_LANG) {
+        document.querySelectorAll('.che5ya-title-ko, .che5ya-paragraph-ko, .che5ya-contact-ko').forEach(el => el.classList.add('hidden'));
+      } else {
+        document.querySelectorAll('.che5ya-title-ca, .che5ya-paragraph-ca, .che5ya-contact-ca').forEach(el => el.classList.add('hidden'));
+      }
+      lang = selectedLang;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      handleChangeLang(lang); // 페이지 로딩 시 한국어가 기본으로 보이도록 설정
+    });
+  </script>
 </body>
 
 </html>
